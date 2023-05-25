@@ -18,7 +18,7 @@ function actualizarBarraCarga() {
     
     if (isNaN(numeroActual)){
         numeroActual = 0;
-        window.alert('Has Subido De Nivel ' + numeroActual);
+        
     }
 
     function incrementarNumero(){   
