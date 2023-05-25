@@ -8,7 +8,7 @@ function actualizarBarraCarga() {
     var  h1 = document.getElementById('contador');
     var imagen = document.getElementById('imagen');
     var documentoOculto = document.getElementById('documentoOculto');
-    var documentoOculto2 = document.getElementById('documentoOculto2');
+    var docOculto = document.getElementById('docOculto');
 
     //1800
     var porcentaje = (tiempoTranscurrido / 60) * 100;
@@ -37,15 +37,24 @@ function actualizarBarraCarga() {
         if (nuevoNumero >= 400 && nuevoNumero <= 500) {
             imagen.src = "img/r5.png";
         }
+        if (nuevoNumero >= 500 && nuevoNumero <= 600) {
+            imagen.src = "img/r6.png";
+        }
 
         localStorage.setItem('contador', nuevoNumero.toString());
         numeroActual = nuevoNumero;
         if (nuevoNumero >= 100) {
             documentoOculto.style.display = 'block';
-          }
-          if (nuevoNumero >= 120) {
+        }
+        if (nuevoNumero >= 150) {
             documentoOculto.style.display = 'none';
-            }   
+        }
+        if (nuevoNumero >= 200) { 
+            docOculto.style.display = 'block';
+        }
+        if (nuevoNumero >= 250) { 
+            docOculto.style.display = 'none';
+        }         
     }
 
     setInterval(incrementarNumero, 58000) 
