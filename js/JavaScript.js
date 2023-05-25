@@ -6,19 +6,22 @@ function actualizarBarraCarga() {
     var time = document.getElementById('time')
     var time = document.getElementById('seconds');
     var  h1 = document.getElementById('contador');
-    var imagen = document.getElementById('imagen')
-   
+    var imagen = document.getElementById('imagen');
+    var documentoOculto = document.getElementById('documentoOculto');
+    var documentoOculto2 = document.getElementById('documentoOculto2');
+
     //1800
     var porcentaje = (tiempoTranscurrido / 60) * 100;
     progress.style.width = porcentaje + '%';
     time.innerText = Math.floor(tiempoTranscurrido / 60) + ' minutos';
     var numeroActual = parseInt(localStorage.getItem('contador'));
-      
+    
     if (isNaN(numeroActual)){
         numeroActual = 0;
+        window.alert('Has Subido De Nivel ' + numeroActual);
     }
 
-    function incrementarNumero(){    
+    function incrementarNumero(){   
         var nuevoNumero = numeroActual + 1;
         h1.innerText = nuevoNumero;
 
@@ -37,8 +40,14 @@ function actualizarBarraCarga() {
 
         localStorage.setItem('contador', nuevoNumero.toString());
         numeroActual = nuevoNumero;
-        
+        if (nuevoNumero >= 100) {
+            documentoOculto.style.display = 'block';
+          }
+          if (nuevoNumero >= 120) {
+            documentoOculto.style.display = 'none';
+            }   
     }
+
     setInterval(incrementarNumero, 58000) 
     if (porcentaje >= 100) {
 
@@ -65,5 +74,4 @@ function incrementarTiempoTranscurrido() {
 }
 setInterval(incrementarTiempoTranscurrido, 1000);
 setInterval(actualizarBarraCarga, 1000);
-window.alert('Has Subido De Nivel ' + numeroActual);
 console.log("alert")

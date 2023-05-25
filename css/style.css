@@ -1,6 +1,22 @@
 .cuerpo{
     background-color: black;
+    }
+.prologo{
+    color: chartreuse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.sorprase{
+    color: #f0ecde;
+}
+.div-primary{
+    background-color: black;
+}
+.alert { 
+    background-image: url('https://media.giphy.com/media/4knozU8q9AXvpod9qy/giphy.gif');
+    background-color: black;
+    background-repeat:no-repeat;
+    background-size: 40rem;
+   }
 .progress-bar {
     width: 100%;
     height: 30px;
