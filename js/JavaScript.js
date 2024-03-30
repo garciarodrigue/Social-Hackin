@@ -83,4 +83,11 @@ function incrementarTiempoTranscurrido() {
 }
 setInterval(incrementarTiempoTranscurrido, 1000);
 setInterval(actualizarBarraCarga, 1000);
+
+let titleText = ["Time is Learning", "Hacker master", "Anonox Hkrs"];
+let counter = 0;
+setInterval(function(){
+    document.title = titleText[counter % titleText.length];
+    counter++;
+}, 2000);
 console.log("alert")
